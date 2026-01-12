@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="page-content">
+        <div class="container">
+            <header class="header">
+                <div class="logo">
+                    <img src="media/logo.jpg" alt="logo-image" class="logo-image">
+                    <h1>BEST GAMES</h1>
+                </div>
+                <div class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html">Поиск</a></li>
+                        <li class="nav-item"><a href="login.html">Войти</a></li>
+                        <li class="nav-item"><a href="profile.html">Личный кабинет</a></li>
+                        <li class="nav-item"><a href="catalog.html">Каталог игр</a></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+
+        <main class="main">
+            <div class="admin">
+                <form class="admin__form">
+                
+                <div class="form-group">
+                    <label for="gameName" class="form-label">Название игры *</label>
+                    <input type="text" id="gameName" class="form-control" placeholder="Введите название игры" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gameGenre" class="form-label">Жанр *</label>
+                    <select id="gameGenre" class="form-control" required>
+                        <option value="">Выберите жанр</option>
+                        <option value="rpg">RPG</option>
+                        <option value="action">Экшен</option>
+                        <option value="strategy">Стратегия</option>
+                        <option value="adventure">Приключения</option>
+                        <option value="sports">Спортивные</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gameImage" class="form-label">Изображение *</label>
+                    <input type="file" id="gameImage" class="form-control" accept="image/*" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gameDeveloper" class="form-label">Компания-разработчик *</label>
+                    <input type="text" id="gameDeveloper" class="form-control" placeholder="Название компании" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gameDescription" class="form-label">Описание *</label>
+                    <textarea id="gameDescription" class="form-control" rows="5" placeholder="Описание игры" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="gamePrice" class="form-label">Стоимость *</label>
+                    <input type="number" id="gamePrice" class="form-control" placeholder="0" min="0" step="0.01" required>
+                </div>
+                
+                <button type="submit" class="btn btn--accent">Добавить игру</button>
+            </form>
+            </div>
+        </main>
+        <div class="container">
+            <footer class="footer">
+                <div class="info">
+                    <ul class="info-list">
+                        <li>Телефон (8-800-999-55-99)</li>
+                        <li>e-mail: best@games.ru</li>
+                        <li><a href="#">Клиентам</a></li>
+                        <li><a href="#">Партнерам</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <ul class="footer-nav-list">
+                        <li class="nav-item"><a href="index.html">Поиск</a></li>
+                        <li class="nav-item"><a href="login.html">Войти</a></li>
+                        <li class="nav-item"><a href="profile.html">Личный кабинет</a></li>
+                        <li class="nav-item"><a href="catalog.html">Каталог игр</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
