@@ -14,11 +14,18 @@
             <header class="header">
                 <div class="logo">
                     <img src="media/logo.jpg" alt="logo-image" class="logo-image">
-                    <h1>BEST GAMES</h1>
+                    <h1><a href="index.html">BEST GAMES</a></h1>
                 </div>
+
+                <button class="burger-menu">
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                    <span class="burger-line"></span>
+                </button>
+
                 <div class="nav">
                     <ul class="nav-list">
-                        <li class="nav-item"><a href="index.html">Поиск</a></li>
+                        <li class="nav-item"><a href="index.html#search">Поиск</a></li>
                         <li class="nav-item"><a href="login.html">Войти</a></li>
                         <li class="nav-item"><a href="profile.html">Личный кабинет</a></li>
                         <li class="nav-item"><a href="catalog.html">Каталог игр</a></li>
@@ -27,128 +34,128 @@
             </header>
         </div>
 
-         <!-- Profile Content -->
-    <main class="profile">
-        <div class="container">
-            <!-- Информация о пользователе -->
-            <section class="profile__header">
-                <h1>Личный кабинет</h1>
-                <div class="profile__info-grid">
-                    <div>
-                        <strong>E-mail:</strong>
-                        <p>ivan.ivanov@example.com</p>
-                    </div>
-                    <div>
-                        <strong>Фамилия:</strong>
-                        <p>Иванов</p>
-                    </div>
-                    <div>
-                        <strong>Имя:</strong>
-                        <p>Иван</p>
-                    </div>
-                    <div>
-                        <strong>Дата рождения:</strong>
-                        <p>15.05.1995</p>
-                    </div>
-                    <div>
-                        <strong>Телефон:</strong>
-                        <p>+7 (999) 123-45-67</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- История покупок -->
-            <section class="profile__section">
-                <h2 class="profile__section-title">История покупок</h2>
-                <div class="table-responsive">
-                    <table class="purchase-history">
-                        <thead>
-                            <tr>
-                                <th>Дата покупки</th>
-                                <th>Название</th>
-                                <th>Стоимость</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>12.01.2024</td>
-                                <td>Cyberpunk 2077</td>
-                                <td>2,999 ₽</td>
-                            </tr>
-                            <tr>
-                                <td>05.01.2024</td>
-                                <td>Набор предметов "Легендарное оружие"</td>
-                                <td>499 ₽</td>
-                            </tr>
-                            <tr>
-                                <td>28.12.2023</td>
-                                <td>The Witcher 3: Wild Hunt</td>
-                                <td>1,499 ₽</td>
-                            </tr>
-                            <tr>
-                                <td>15.12.2023</td>
-                                <td>Elden Ring</td>
-                                <td>3,499 ₽</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Настройки профиля -->
-            <section class="profile__section">
-                <h2 class="profile__section-title">Настройки профиля</h2>
-                <div class="settings__options">
-                    <div class="settings__option">
-                        <span>Смена пароля</span>
-                        <button class="btn btn--small">Изменить пароль</button>
-                    </div>
-                    
-                    <div class="settings__option">
-                        <span>Тема оформления</span>
-                        <div class="theme-switch">
-                            <span>Тёмная</span>
-                            <label class="switch">
-                                <input type="checkbox" id="themeToggle">
-                                <span class="slider-round"></span>
-                            </label>
-                            <span>Светлая</span>
+        <!-- Profile Content -->
+        <main class="profile">
+            <div class="container">
+                <!-- Информация о пользователе -->
+                <section class="profile__header">
+                    <h1>Личный кабинет</h1>
+                    <div class="profile__info-grid">
+                        <div>
+                            <strong>E-mail:</strong>
+                            <p>ivan.ivanov@example.com</p>
+                        </div>
+                        <div>
+                            <strong>Фамилия:</strong>
+                            <p>Иванов</p>
+                        </div>
+                        <div>
+                            <strong>Имя:</strong>
+                            <p>Иван</p>
+                        </div>
+                        <div>
+                            <strong>Дата рождения:</strong>
+                            <p>15.05.1995</p>
+                        </div>
+                        <div>
+                            <strong>Телефон:</strong>
+                            <p>+7 (999) 123-45-67</p>
                         </div>
                     </div>
-                    
-                    <div class="settings__option">
-                        <span>Уведомления</span>
-                        <label class="form-check">
-                            <input type="checkbox" class="form-check-input" checked>
-                            <span>Email-уведомления</span>
-                        </label>
+                </section>
+
+                <!-- История покупок -->
+                <section class="profile__section">
+                    <h2 class="profile__section-title">История покупок</h2>
+                    <div class="table-responsive">
+                        <table class="purchase-history">
+                            <thead>
+                                <tr>
+                                    <th>Дата покупки</th>
+                                    <th>Название</th>
+                                    <th>Стоимость</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>12.01.2024</td>
+                                    <td>Cyberpunk 2077</td>
+                                    <td>2,999 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td>05.01.2024</td>
+                                    <td>Набор предметов "Легендарное оружие"</td>
+                                    <td>499 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td>28.12.2023</td>
+                                    <td>The Witcher 3: Wild Hunt</td>
+                                    <td>1,499 ₽</td>
+                                </tr>
+                                <tr>
+                                    <td>15.12.2023</td>
+                                    <td>Elden Ring</td>
+                                    <td>3,499 ₽</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
+                </section>
+
+                <!-- Настройки профиля -->
+                <section class="profile__section">
+                    <h2 class="profile__section-title">Настройки профиля</h2>
+                    <div class="settings__options">
+                        <div class="settings__option">
+                            <span>Смена пароля</span>
+                            <button class="btn btn--small">Изменить пароль</button>
+                        </div>
+
+                        <div class="settings__option">
+                            <span>Тема оформления</span>
+                            <div class="theme-switch">
+                                <span>Тёмная</span>
+                                <label class="switch">
+                                    <input type="checkbox" id="themeToggle">
+                                    <span class="slider-round"></span>
+                                </label>
+                                <span>Светлая</span>
+                            </div>
+                        </div>
+
+                        <div class="settings__option">
+                            <span>Уведомления</span>
+                            <label class="form-check">
+                                <input type="checkbox" class="form-check-input" checked>
+                                <span>Email-уведомления</span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <div class="container">
+            <footer class="footer">
+                <div class="info">
+                    <ul class="info-list">
+                        <li>Телефон (+7-800-999-55-99)</li>
+                        <li>e-mail: best@games.ru</li>
+                        <li><a href="#">Клиентам</a></li>
+                        <li><a href="#">Партнерам</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
                 </div>
-            </section>
+                <div class="footer-nav">
+                    <ul class="footer-nav-list">
+                        <li class="nav-item"><a href="index.html">Поиск</a></li>
+                        <li class="nav-item"><a href="login.html">Войти</a></li>
+                        <li class="nav-item"><a href="profile.html">Личный кабинет</a></li>
+                        <li class="nav-item"><a href="catalog.html">Каталог игр</a></li>
+                    </ul>
+                </div>
+            </footer>
         </div>
-    </main>
-    <div class="container">
-        <footer class="footer">
-            <div class="info">
-                <ul class="info-list">
-                    <li>Телефон (8-800-999-55-99)</li>
-                    <li>e-mail: best@games.ru</li>
-                    <li><a href="#">Клиентам</a></li>
-                    <li><a href="#">Партнерам</a></li>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
-            </div>
-            <div class="footer-nav">
-                <ul class="footer-nav-list">
-                    <li class="nav-item"><a href="index.html">Поиск</a></li>
-                    <li class="nav-item"><a href="login.html">Войти</a></li>
-                    <li class="nav-item"><a href="profile.html">Личный кабинет</a></li>
-                    <li class="nav-item"><a href="catalog.html">Каталог игр</a></li>
-                </ul>
-            </div>
-        </footer>
-    </div>
     </div>
 </body>
 

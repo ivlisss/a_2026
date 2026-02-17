@@ -7,6 +7,12 @@
     margin: 0;
 }
 
+@font-face{
+     
+    font-family: 'MTSans-Bold';
+    src:url('fonts/MTSans-Bold.ttf');
+}
+
 /* CSS переменные */
 :root {
     /* Основные цвета */
@@ -93,7 +99,7 @@ a {
     display: flex;
     flex-direction: row;
     background-color: var(--bg-secondary);
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: center;
     padding: var(--spacing-lg);
     color: var(--text-primary);
@@ -103,7 +109,7 @@ a {
 .logo {
     display: flex;
     flex-direction: row;
-    max-width: 100px;
+    width: 120px;
     padding: var(--spacing-sm);
 }
 
@@ -114,6 +120,7 @@ a {
 
 .logo h1 {
     margin-left: 2rem;
+    font-family: "MTSans-Bold";
 }
 
 .nav-list {
@@ -296,6 +303,7 @@ section {
     text-align: center;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
+    padding-bottom: var(--spacing-lg);
 }
 
 .game-card-image {
@@ -316,7 +324,8 @@ h4 {
     margin: var(--spacing-sm);
     color: var(--success-color);
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
 }
 
 /* Кнопки */
@@ -332,7 +341,7 @@ h4 {
 }
 
 .btn-primary {
-    background-color: var(--bg-card);
+    background-color: var(--primary-color);
     color: var(--text-primary);
     font-size: 1.5rem;
 }
@@ -556,6 +565,7 @@ input:checked + .slider-round:before {
     display: grid;
     grid-template-columns: 250px 1fr;
     gap: var(--spacing-lg);
+    align-items: start; /* Важно: выравнивание по верху */
 }
 
 .filters {
@@ -563,6 +573,9 @@ input:checked + .slider-round:before {
     padding: var(--spacing-lg);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    height: fit-content; /* Занимает только нужную высоту */
+    position: sticky; /* Можно закрепить при скролле */
+    top: var(--spacing-lg); /* Отступ сверху при закреплении */
 }
 
 .filter__group {
@@ -588,7 +601,6 @@ input:checked + .slider-round:before {
     gap: var(--spacing-xs);
     cursor: pointer;
 }
-
 /* Админ панель */
 .admin {
     max-width: 800px;
@@ -661,23 +673,79 @@ input:checked + .slider-round:before {
     line-height: 1.5;
 }
 
-/* Адаптивность */
 
-/* Планшет (768px) */
+/* Адаптивность */
+/* Общие медиа-запросы для мобильных */
 @media (max-width: 768px) {
-    /* Структурное изменение 1: Хедер в колонку */
+    /* Хедер и навигация для планшета и мобильных */
     .header {
-        flex-direction: column;
-        text-align: center;
-        gap: var(--spacing-md);
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--spacing-sm) var(--spacing-md);
     }
     
-    /* Структурное изменение 2: Навигация вертикальная */
+    .logo {
+        max-width: 90px;
+    }
+    
+    .logo h1 {
+        margin-left: var(--spacing-sm);
+        font-size: 1.4rem;
+    }
+    
+    /* Бургер-меню */
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .burger-line {
+        width: 100%;
+        height: 3px;
+        background-color: var(--text-primary);
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+    
+    .burger-menu.active .burger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .burger-menu.active .burger-line:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active .burger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    /* Меню навигации */
     .nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-secondary);
         flex-direction: column;
+        padding: var(--spacing-md);
+        z-index: 100;
+        box-shadow: var(--shadow);
     }
     
-    /* Структурное изменение 3: Каталог в одну колонку */
+    .nav-list.active {
+        display: flex;
+    }
+    
+    /* Структурные изменения для каталога */
     .catalog__layout {
         grid-template-columns: 1fr;
     }
@@ -690,7 +758,7 @@ input:checked + .slider-round:before {
         display: block;
     }
     
-    /* Структурное изменение 4: Страница игры в колонку */
+    /* Страница игры */
     .about-game {
         flex-direction: column;
     }
@@ -699,32 +767,53 @@ input:checked + .slider-round:before {
         width: 100%;
         max-width: 400px;
     }
-}
-
-/* Мобильные (480px) */
-@media (max-width: 480px) {
-    /* Структурное изменение 1: Логотип меньше */
-    .logo h1 {
-        font-size: 1.2rem;
-        margin-left: var(--spacing-sm);
+    
+    /* Форма поиска */
+    .search-form {
+        flex-direction: column;
     }
     
-    /* Структурное изменение 2: Карточки в одну колонку */
+    /* Карточки в одну колонку */
     .infographic-grid,
     .popular-games-grid,
     .partner-grid {
         grid-template-columns: 1fr;
     }
-    
-    /* Структурное изменение 3: Поиск в колонку */
-    .search-form {
-        flex-direction: column;
+}
+
+/* Только для мобильных (до 480px) */
+@media (max-width: 480px) {
+    /* Уменьшенный логотип */
+    .logo {
+        max-width: 80px;
     }
     
-    /* Структурное изменение 4: Футер в колонку */
+    .logo h1 {
+        font-size: 1.2rem;
+        margin-left: var(--spacing-xs);
+    }
+    
+    /* Уменьшенный бургер-меню */
+    .burger-menu {
+        width: 25px;
+        height: 18px;
+    }
+    
+    /* Футер в колонку */
     .footer {
         flex-direction: column;
         text-align: center;
+        gap: var(--spacing-md);
     }
 }
 
+/* Десктоп (769px и больше) - скрыть бургер, показать меню */
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none;
+    }
+    
+    .nav-list {
+        display: flex !important;
+    }
+}

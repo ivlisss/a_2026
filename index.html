@@ -10,22 +10,28 @@
 
 <body>
     <div class="page-content">
-        <div class="container">
-            <header class="header">
-                <div class="logo">
-                    <img src="media/logo.jpg" alt="logo-image" class="logo-image">
-                    <h1>BEST GAMES</h1>
-                </div>
-                <div class="nav">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="#search">Поиск</a></li>
-                        <li class="nav-item"><a href="login.html">Войти</a></li>
-                        <li class="nav-item"><a href="profile.html">Личный кабинет</a></li>
-                        <li class="nav-item"><a href="catalog.html">Каталог игр</a></li>
-                    </ul>
-                </div>
-            </header>
-        </div>
+        <header class="header">
+            <div class="logo">
+                <img src="media/logo.jpg" alt="logo-image" class="logo-image">
+                <h1><a href="index.html">BEST GAMES</a></h1>
+            </div>
+
+            <button class="burger-menu">
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+                <span class="burger-line"></span>
+            </button>
+
+            <div class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#search">Поиск</a></li>
+                    <li class="nav-item"><a href="login.html">Войти</a></li>
+                    <li class="nav-item"><a href="profile.html">Личный кабинет</a></li>
+                    <li class="nav-item"><a href="catalog.html">Каталог игр</a></li>
+                </ul>
+            </div>
+        </header>
+
 
 
         <section class="slider">
@@ -70,18 +76,19 @@
             <button class="next">›</button>
 
             <div class="slider-indicators">
-        <button class="indicator active"></button>
-        <button class="indicator"></button>
-        <button class="indicator"></button>
-    </div>
+                <button class="indicator active"></button>
+                <button class="indicator"></button>
+                <button class="indicator"></button>
+            </div>
         </section>
+
         <div class="container">
 
             <section class="search" id="search">
                 <div class="container">
                     <h2 class="quick-search__title">Быстрый поиск по жанрам</h2>
                     <form class="search-form">
-                        <input type="text" class="form-control search-form__input" placeholder="Введите жанр игры...">
+                        <input type="search" class="form-control search-form__input" placeholder="Введите жанр игры...">
                         <button type="submit" class="btn">Найти</button>
                     </form>
                 </div>
@@ -221,7 +228,7 @@
             <footer class="footer">
                 <div class="info">
                     <ul class="info-list">
-                        <li>Телефон (8-800-999-55-99)</li>
+                        <li>Телефон (+7-800-999-55-99)</li>
                         <li>e-mail: best@games.ru</li>
                         <li><a href="#">Клиентам</a></li>
                         <li><a href="#">Партнерам</a></li>
@@ -260,8 +267,8 @@
             slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
 
             indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === currentSlide);
-        });
+                indicator.classList.toggle('active', i === currentSlide);
+            });
         }
 
         function nextSlide() {
@@ -275,6 +282,35 @@
         // Обработчики кнопок
         if (prevBtn) prevBtn.addEventListener('click', prevSlide);
         if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navList = document.querySelector('.nav-list');
+
+        if (burgerMenu && navList) {
+            burgerMenu.addEventListener('click', function () {
+                navList.classList.toggle('active');
+                burgerMenu.classList.toggle('active');
+            });
+
+            // Закрытие меню при клике на ссылку
+            const navLinks = document.querySelectorAll('.nav-list a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    navList.classList.remove('active');
+                    burgerMenu.classList.remove('active');
+                });
+            });
+
+            // Закрытие меню при клике вне его
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.header')) {
+                    navList.classList.remove('active');
+                    burgerMenu.classList.remove('active');
+                }
+            });
+        }
     });
 </script>
 
