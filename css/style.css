@@ -7,17 +7,17 @@
     margin: 0;
 }
 
-@font-face{
-     
-    font-family: 'MTSans-Bold';
-    src:url('fonts/MTSans-Bold.ttf');
+@font-face {
+    font-family: "My";
+    src: url("../fonts/MTSans-Bold.ttf");
 }
+
 
 /* CSS переменные */
 :root {
     /* Основные цвета */
-    --primary-color: #6C63FF;
-    --secondary-color: #4A44C4;
+    --primary-color: #28b0da;
+    --secondary-color: #1e34b3;
     --accent-color: #FF6584;
     --success-color: #4CAF50;
     
@@ -101,16 +101,17 @@ a {
     background-color: var(--bg-secondary);
     justify-content: space-between;
     align-content: center;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-lg);
     color: var(--text-primary);
-    gap: 5rem;
 }
 
 .logo {
     display: flex;
     flex-direction: row;
-    width: 120px;
+    align-items: center;
+    width: 170px;
     padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
 }
 
 .logo-image {
@@ -120,7 +121,8 @@ a {
 
 .logo h1 {
     margin-left: 2rem;
-    font-family: "MTSans-Bold";
+    font-family: "My";
+    /* white-space: nowrap; */
 }
 
 .nav-list {
@@ -135,8 +137,14 @@ a {
 .nav-list a {
     color: var(--text-primary);
     text-decoration: none;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xs) var(--spacing-sm);
 }
 
+.nav-list a:hover {
+    color: var(--secondary-color);
+    background-color: var(--bg-card);
+}
 /* Слайдер */
 .slider {
     position: relative;
@@ -270,6 +278,12 @@ section {
     border-radius: var(--border-radius);
 }
 
+.infographic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--secondary-color);
+}
+
 .infographic-card-image {
     width: 100%;
 }
@@ -306,6 +320,12 @@ section {
     padding-bottom: var(--spacing-lg);
 }
 
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--secondary-color);
+}
+
 .game-card-image {
     height: 70%;
 }
@@ -313,6 +333,7 @@ section {
 .game-card-image img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 h4 {
@@ -688,6 +709,7 @@ input:checked + .slider-round:before {
     
     .logo {
         max-width: 90px;
+        flex: 0 1 auto;
     }
     
     .logo h1 {
@@ -705,6 +727,8 @@ input:checked + .slider-round:before {
         background: none;
         border: none;
         cursor: pointer;
+        margin-left: auto;
+        flex-shrink: 0;
     }
     
     .burger-line {
